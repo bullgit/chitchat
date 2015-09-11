@@ -1,0 +1,19 @@
+{
+  "name": "chaplin-init",
+  "version": "0.0.0",
+  "engines": { "node": "~0.10.21" },
+  "description": "A fast way to bootstrap a Chaplin project",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/victormours/chaplin-init.git"
+  },
+  "author": "",
+  "homepage": "https://github.com/victormours/chaplin-init",
+  "dependencies": {
+    "gulp": "^3.8.10"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-ruby-sass": "^0.7.1"
+  }
+}
