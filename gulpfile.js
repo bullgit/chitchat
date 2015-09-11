@@ -1,10 +1,8 @@
 var gulp = require('gulp');
 var sass = require('gulp-ruby-sass');
 
-var css_files = 'src/public/scss/app.scss',
-    js_files = ['bower_components/foundation/js/foundation.min.js',
-                 'bower_components/modernizr/modernizr.js',
-                 'bower_components/jquery/dist/jquery.min.js'],
+var css_files = [],
+    js_files = [],
     image_files = 'src/public/images/**/*',
     template_files = 'src/templates/**/*',
     chaplin_files = ['src/chaplin_config.json', 'src/app.yml']

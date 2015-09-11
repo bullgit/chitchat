@@ -1,3 +1,5 @@
 layout: layout.html
 routes:
   GET /: index.html
+  GET /auth/github/callback: login.html
+

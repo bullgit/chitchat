@@ -1,8 +1,0 @@
-{
-  "name": "Chaplin App",
-  "version": "0.0.0",
-  "private": "true",
-  "dependencies": {
-    "foundation": "zurb/bower-foundation"
-  }
-}
