@@ -14,10 +14,19 @@ class OmniAuthForwarder
       env["QUERY_STRING"] = Rack::Utils.build_query({auth: env['omniauth.auth'].to_h})
       env["rack.request.query_string"] = Rack::Utils.build_query({auth: env['omniauth.auth'].to_h})
       env["rack.request.query_hash"] = {auth: env['omniauth.auth'].to_h}
-      request = Rack::Request.new(env)
     end
 
-    @app.call(env)
+    response = @app.call(env)
+    response = Rack::Response.new(response[2], response[0], response[1])
+
+    if env['omniauth.auth']
+      response.set_cookie("token", {
+        path: '/',
+        value: env['omniauth.auth']['credentials']['token']
+      })
+    end
+
+    response.finish
   end
 
 end
