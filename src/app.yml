@@ -3,5 +3,10 @@ layout: layout.html
 routes:
   GET /: index.html
   GET /auth/github/callback: login.html
+  GET /chat: chat.html
+
+pages:
+  chat.html:
+    orgs: GET user/orgs?access_token={{params.cookies.token}}
 
 

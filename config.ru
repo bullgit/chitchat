@@ -10,6 +10,9 @@ class OmniAuthForwarder
   end
 
   def call(env)
+    request = Rack::Request.new(env)
+    request.update_param('cookies', request.cookies)
+
     if env['omniauth.auth']
       env["QUERY_STRING"] = Rack::Utils.build_query({auth: env['omniauth.auth'].to_h})
       env["rack.request.query_string"] = Rack::Utils.build_query({auth: env['omniauth.auth'].to_h})
