@@ -1,3 +1,11 @@
-Hello
-<a href='/auth/github'>Sign in with Github</a>
+{{^ orgs }}
+  <a href='/auth/github'>Sign in with Github</a>
+{{/ orgs }}
+
+{{# orgs }}
+  {{# login."bullgit" }}
+    Yerr a gitch 'arry!
+    Insert code for Firebase chat here
+  {{/ login."bullgit" }}
+{{/ orgs }}
 
