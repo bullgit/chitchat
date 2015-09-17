@@ -9,6 +9,13 @@ GIT
       rack
       sinatra
 
+GIT
+  remote: git://github.com/victormours/mustache.git
+  revision: 67a649ac2aa534aa93c9f45cdf49aabfd7827191
+  branch: feature-if-tag
+  specs:
+    mustache (1.0.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -23,7 +30,6 @@ GEM
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    mustache (1.0.0)
     oauth2 (1.0.0)
       faraday (>= 0.8, < 0.10)
       jwt (~> 1.0)
@@ -62,9 +68,7 @@ PLATFORMS
 
 DEPENDENCIES
   chaplin!
+  mustache!
   omniauth-github
   rack
   thin
-
-BUNDLED WITH
-   1.10.4
