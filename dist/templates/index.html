@@ -1,0 +1,10 @@
+{{^ params.cookies.token }}
+  <a href='/auth/github'>Log in with Github</a>
+{{/ params.cookies.token }}
+
+{{# orgs }}
+  {{# login."bullgit" }}
+    {{{ chat }}}
+  {{/ login."bullgit" }}
+{{/ orgs }}
+
