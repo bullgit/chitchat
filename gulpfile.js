@@ -1,8 +1,8 @@
 var gulp = require('gulp');
 var sass = require('gulp-ruby-sass');
 
-var css_files = [],
-    js_files = [],
+var css_files = 'src/public/css/**/*',
+    js_files = 'src/public/js/**/*',
     image_files = 'src/public/images/**/*',
     template_files = 'src/templates/**/*',
     chaplin_files = ['src/chaplin_config.json', 'src/app.yml']
@@ -10,11 +10,7 @@ var css_files = [],
 
 gulp.task('css', function () {
     return gulp.src(css_files)
-        .pipe(sass({
-          loadPath: "bower_components/foundation/scss",
-        }))
-        .on('error', function (err) { console.log(err.message); })
-        .pipe(gulp.dest('dist/public/css'));
+          .pipe(gulp.dest('dist/public/css'));
 });
 
 gulp.task('js', function () {
