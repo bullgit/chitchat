@@ -5,7 +5,9 @@ routes:
   GET /auth/github/callback: login.html
 
 pages:
+  chat.html: {}
   index.html:
     orgs: GET user/orgs?access_token={{cookies.token}}
+    chat: chat.html
 
 
