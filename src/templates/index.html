@@ -1,6 +1,6 @@
-{{^ orgs }}
-  <a href='/auth/github'>Sign in with Github</a>
-{{/ orgs }}
+{{^ params.cookies.token }}
+  <a href='/auth/github'>Log in with Github</a>
+{{/ params.cookies.token }}
 
 {{# orgs }}
   {{# login."bullgit" }}
