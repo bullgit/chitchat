@@ -1,0 +1,116 @@
+
+*{
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+  float: left;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: 'Arial';
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+  width: 100%;
+  width: 100vw;
+
+  padding: 0 16px;
+  float: left;
+  min-height: 50px;
+  background: #8281CB;
+  position: fixed;
+  z-index: 99999999999999999999;
+  line-height: 50px;
+  color: #fff;
+}
+
+header {
+  top: 0;
+}
+
+
+footer {
+  bottom: 0;
+}
+
+textarea#message {
+  position: absolute;
+  width: 100%;
+  top: -50px;
+  border-top: 1px solid #8281CB;
+  left: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  resize: none;
+  height: 50px;
+  outline: none;
+}
+button#send {
+  display: block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  right: 0;
+  position: absolute;
+  top: 0;
+  min-width: 200px;
+  height: 100%;
+  background: #7f57cf;
+  display: block;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* Zone message */
+.chat-messages {
+  position: absolute;
+
+  height: calc(100% - 100px);
+  height: calc(100vh - 100px);
+  top: 50px;
+  padding-bottom: 100px;
+  color: #000;
+  width: 100%;
+}
+
+
+/* Message style */
+message {
+  float: left;
+  width: 100%;
+  height: auto;
+
+  border-bottom: 1px solid #eff0f2;
+  line-height: 1;
+  position: relative;
+  margin-top: 8px;
+}
+
+message .username,
+message .user_message {
+  float: left;
+}
+
+message .username  {
+  color: #fff;
+  background: #7f57cf;
+  float: left;
+  padding: 1em;
+  position: relative;
+}
+
+message .user_message {
+  padding-left: 1em;
+}
