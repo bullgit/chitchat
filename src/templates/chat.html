@@ -1,2 +1,17 @@
-Yerr a gitch 'arry!
-Insert code for Firebase chat here
+
+  <div class="chat-wrapper">
+    <header>
+      <h2>ChitChat</h2>
+    </header>
+    <div class="chat-messages">
+    </div>
+    <footer>
+      <div class="chat-controls">
+        <input type="text" id="name" placeholder="Your name here" >
+        <textarea id="message" placeholder="Your message here" onkeypress="return searchKeyPress(event);"></textarea>
+        <button id="send">Send</button>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
