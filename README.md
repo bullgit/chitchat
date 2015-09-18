@@ -13,6 +13,8 @@ Building a bullgit chat from scratch
 
 # Features:
 
+## Main
+
 - [ ] push notifications
 - [x] useable on mobile
   - [x] viewport meta tag
@@ -26,7 +28,7 @@ Building a bullgit chat from scratch
 - [ ] fast
   - [ ] sending 10 gifs in a row will result in less history, not in slow and unuseable interfaces
 
-# less needed
+## less needed
 
 - [ ] edit after send
 - [ ] emoji's
@@ -35,12 +37,13 @@ Building a bullgit chat from scratch
 - [ ] code highlighting
   - [ ] "code" mode where enter sends a soft enter between code fences (```)
 
-# other basic things
+## other basic things
 
 - [x] clear after send
   - [ ] no weird enter after entering to send
 
-# layouts I enjoy
+## layouts to look at
 
 - iMessage
+- Messenger (fb or the android SMS app)
 - slack
