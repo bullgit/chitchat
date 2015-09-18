@@ -41,4 +41,4 @@ end
 
 use OmniAuthForwarder
 
-run Chaplin.new(Dir.pwd + "/dist").server
+run Chaplin.new(Dir.pwd + "/src").server
