@@ -1,17 +1,36 @@
 
   <div class="chat-wrapper">
     <header>
-      <h2>ChitChat</h2>
+      <h2>bullchat </h2>
+
+      <div class="user_infos">
+        <a href="#"><i class="icon icon-github"></i></a>
+        <p id='name'>{{user.login}}</p>
+      </div>
     </header>
+
+    <aside>
+      <ul>
+        <li><img src="img/poly_me.png" class="avatar" alt=""></li>
+        <li><img src="img/poly_me.png" class="avatar" alt=""></li>
+        <li><img src="img/poly_me.png" class="avatar" alt=""></li>
+        <li><img src="img/poly_me.png" class="avatar" alt=""></li>
+      </ul>
+    </aside>
+
     <div class="chat-messages">
+      <!-- messages here -->
     </div>
+
     <footer>
       <div class="chat-controls">
-        <input type="text" id="name" placeholder="Your name here" >
-        <textarea id="message" placeholder="Your message here" onkeypress="return searchKeyPress(event);"></textarea>
-        <button id="send">Send</button>
+        <div class="user_avatar">
+          <img src="img/poly_me.png" alt="" class="avatar">
+          <p id="name">{{user.login}}</p>
+        </div>
+
+        <div id="message" class="messageinput" placeholder="Your message here" onkeypress="return searchKeyPress(event);" contenteditable></div>
+        <button class="sendbutton" id="send">Send</button>
       </div>
     </footer>
   </div>
-
-  <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
