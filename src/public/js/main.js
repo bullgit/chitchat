@@ -4,7 +4,7 @@
 
     document.getElementById('send').addEventListener('click', function(){
 
-      var username = document.getElementById('name').value;
+      var username = document.getElementById('name').textContent;
       var message = document.getElementById('message').value;
       if (message.length == 0) return false;
       myFirebaseRef.push({

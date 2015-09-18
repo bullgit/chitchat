@@ -7,7 +7,7 @@
     </div>
     <footer>
       <div class="chat-controls">
-        <input type="text" id="name" placeholder="Your name here" >
+        <p id="name">{{user.login}}</p>
         <textarea id="message" placeholder="Your message here" onkeypress="return searchKeyPress(event);"></textarea>
         <button id="send">Send</button>
       </div>
