@@ -16,7 +16,7 @@ Building a bullgit chat from scratch
 ## Main
 
 - [ ] push notifications
-- [x] useable on mobile
+- [ ] useable on mobile
   - [x] viewport meta tag
 - [ ] one-time sign in
 - [x] enter to send
