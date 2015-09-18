@@ -1,104 +1,97 @@
-var NONET = false;
+// Chitchat @bullgit
+// V0.1
 
-  var myFirebaseRef = new Firebase("https://bullchat.firebaseio.com/messages");
+// ====================================
+// global Variables
+// ====================================
+var myFirebaseRef = new Firebase("https://bullchat.firebaseio.com/messages");
 
-  var username_input = document.querySelector('.nameinput');
-  var message_input =  document.querySelector('.messageinput');
-  var send_btn = document.querySelector('.sendbutton');
-  var message_container = document.querySelector('.chat-messages');
+var message_input =  document.querySelector('.messageinput');
+var send_btn = document.querySelector('.sendbutton');
+var message_container = document.querySelector('.chat-messages');
 
-  marked.setOptions({
-    highlight: function (code) {
-      return hljs.highlightAuto(code).value;
+// Init marked
+marked.setOptions({
+  highlight: function (code) {
+    return hljs.highlightAuto(code).value;
+  }
+});
+
+// ====================================
+// Push messages to firebase
+// ====================================
+
+// Detect when message is sent
+document.getElementById('send').addEventListener('click', function(){
+
+  // Get the desired values for name / message
+  var username = document.getElementById('name').textContent;
+  var message = document.getElementById('message').textContent;
+
+  // If the message is empty don't do anything
+  if (message.length == 0) return false;
+
+  // If the message is not empty push it to firebase
+  myFirebaseRef.push({
+
+    // This id may be useless
+    id: "message-id-" +Math.random().toString(36).substr(2, 16)+"-msg", 
+    data: {
+      author: username,
+      body: message
     }
   });
 
-  if (localStorage['username']) {
-    username_input.value = localStorage['username'];
-  }
+})
 
 
-    if (NONET==true) {
-      document.getElementById('send').addEventListener('click', function(){
+// ====================================
+// Get messages from firebase
+// ====================================
 
-      var username = document.getElementById('name').value;
-      var message = document.getElementById('message').textContent;
-      // if (message.length == 0) return false;
+myFirebaseRef.on('child_added', function(dataSnapshot) {
+  var newPost = dataSnapshot.val();
 
-      var template = '<message data-time-stamp="10-11-2015">' +
-      '<div class="user">' +
-          '  <span class="-avatar"> <img src="img/poly_me.png" alt="avatar user" /> </span>' +
-          '  <span class="-name"> '+ username +' </span>' +
-         ' </div>' +
-         ' <div class="user_message">' +
-           ' <p>'+ message +'</p>' +
-          '</div>' +
-      '</message>';
+  // create message template
+  var template = '<message>' +
+  '<div class="user">' +
+  '  <span class="-avatar"> <img src="img/poly_me.png" alt="avatar user" /> </span>' +
+  '  <span class="-name"> '+ newPost.data.author +' </span>' +
+  ' </div>' +
+  ' <div class="user_message">' +
+  ' <p>'+ marked(newPost.data.body) +'</p>' +
+  '</div>' +
+  '</message>';
 
-      var msg = document.createElement('div');
-      msg.innerHTML = template;
+  // Generate message container
+  var msg = document.createElement('div');
+  
+  // Fill it with the template
+  msg.innerHTML = template;
 
-      document.querySelector('.chat-messages').appendChild(msg)
-      document.getElementById('message').innerHTML = "";
-      message_container.scrollTop = message_container.scrollHeight
+  // And add the message to the chat
+  document.querySelector('.chat-messages').appendChild(msg)
 
-    })
-    } else {
-      document.getElementById('send').addEventListener('click', function(){
-
-        var username = document.getElementById('name').value;
-        var message = document.getElementById('message').textContent;
-        if (message.length == 0) return false;
-        myFirebaseRef.push({
-          id: "message-id-" +Math.random().toString(36).substr(2, 16)+"-msg",
-          data: {
-            author: username,
-            body: message
-          }
-        });
-
-      })
-    }
-
-    myFirebaseRef.on('child_added', function(dataSnapshot) {
-      var newPost = dataSnapshot.val();
-      var d = new Date();
-      var today = d.getMonth() + '-' + d.getDay() + '-' + d.getYear();
-      console.log(today);
-      console.log(newPost);
+  // Make sure to empty the reply-box
+  document.getElementById('message').innerHTML = "";
+});
 
 
-       var template = '<message data-time-stamp="10-11-2015">' +
-      '<div class="user">' +
-          '  <span class="-avatar"> <img src="img/poly_me.png" alt="avatar user" /> </span>' +
-          '  <span class="-name"> '+ newPost.data.author +' </span>' +
-         ' </div>' +
-         ' <div class="user_message">' +
-           ' <p>'+ marked(newPost.data.body) +'</p>' +
-          '</div>' +
-      '</message>';
+// ====================================
+// MISC functions
+// ====================================
 
-
-      var msg = document.createElement('div');
-      msg.innerHTML = template;
-
-      document.querySelector('.chat-messages').appendChild(msg)
-      document.getElementById('message').innerHTML = "";
-    });
-
-    function searchKeyPress(e){
+// This function detect if the return key was pressed
+function searchKeyPress(e){
     // look for window.event in case event isn't passed in
     e = e || window.event;
+
+    // If return was pressed, send the message
     if (e.keyCode == 13)
     {
-        document.getElementById('send').click();
-        return false;
+      document.getElementById('send').click();
+      return false;
     }
     return true;
   }
 
-
-
-username_input.addEventListener('input', function () {
-  localStorage['username'] = username_input.value;
-});
