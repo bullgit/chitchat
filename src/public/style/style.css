@@ -183,7 +183,10 @@ button#send {
   
   color: #000;
   width: calc(100% - 200px);
-  float: left;
+    float: left;
+    overflow: hidden;
+    
+  overflow-y: scroll;
 }
 
 .chat-messages .messages_wrapper {

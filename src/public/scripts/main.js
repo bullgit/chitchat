@@ -69,7 +69,7 @@ var NONET = false;
           '  <span class="-name"> '+ newPost.data.author +' </span>' +
          ' </div>' +
          ' <div class="user_message">' +
-           ' <p>'+ newPost.data.body +'</p>' +
+           ' <p>'+ marked(newPost.data.body) +'</p>' +
           '</div>' +
       '</message>';
 
