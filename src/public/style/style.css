@@ -1,3 +1,4 @@
+/* Fonts */ 
 
 @font-face {
   font-family: radikal_regular;
@@ -11,15 +12,7 @@
   font-family: radikal_light;
   src: url("../fonts/radikal/radikal_light.eot?") format("eot"), url("../fonts/radikal/radikal_light.woff") format("woff"), url("../fonts/radikal/radikal_light.svg#radikal_light") format("svg"), url("../fonts/radikal/radikal_light.ttf") format("truetype"); }
 
-* {
-  box-sizing: border-box; }
-
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%; }
-
-  
+/* Reset */  
 *{
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -40,6 +33,9 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
+/*====================================
+ Layout
+====================================*/
 header, footer {
   width: 100%;
   width: 100vw;
@@ -92,6 +88,7 @@ aside ul li {
 aside ul li img {
   max-width: 100%;
 }
+
 /* User infos */
 .user_infos {
   max-width: 232px;
@@ -173,6 +170,8 @@ button#send {
   padding: 10px;
   border-radius: 20px;
 }
+
+
 /* Zone message */
 .chat-messages {
   position: absolute;
@@ -199,7 +198,10 @@ button#send {
 }
 
 
-/* Message style */
+
+/*====================================
+ Messages style
+====================================*/
 message {
   float: left;
   width: calc(100% + 4em);
@@ -212,7 +214,6 @@ message {
   margin-top: 8px;
   left: -2em;
 }
-
 
 message:after {
   display: block;
@@ -262,7 +263,7 @@ message .user_message {
   background: white;
 }
 
-
+/* Style text of messages */
 message .user_message p {
   margin: 0;
   padding: 0;
