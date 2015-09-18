@@ -108,16 +108,9 @@ aside ul li img {
 }
 .user_infos #name {
   float: right;
-  position: absolute;
   right: 16px;
-  top: 50%;
   transform: translateY(-50%);
   padding: 8px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  outline: none;
   min-width: 200px;
 }
 
@@ -239,8 +232,8 @@ message .user  {
 
 message .user .-avatar {
   float: left;
-  max-width: 32px;
-  max-height: 32px;
+  max-width: 2rem;
+  max-height: 2rem;
   overflow: hidden;
   border-radius: 10px;
 }
