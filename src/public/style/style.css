@@ -19,7 +19,7 @@ html, body {
   padding: 0;
   height: 100%; }
 
-  
+
 *{
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -103,7 +103,7 @@ aside ul li img {
 }
 .user_infos .icon {
   float: left;
-  line-height: 0; 
+  line-height: 0;
   margin: 0 -1em;
 }
 .user_infos #name {
@@ -180,12 +180,12 @@ button#send {
   height: 100vh;
   padding-top: 75px;
   padding-bottom: 50px;
-  
+
   color: #000;
   width: calc(100% - 200px);
     float: left;
     overflow: hidden;
-    
+
   overflow-y: scroll;
 }
 
@@ -242,7 +242,6 @@ message .user .-avatar {
   max-width: 32px;
   max-height: 32px;
   overflow: hidden;
-  
   border-radius: 10px;
 }
 
@@ -253,6 +252,8 @@ message .user .-avatar img  {
 
 message .user .-name {
   color: #568CCF;
+  float: right;
+  font-size: .6em;
 }
 
 message .user_message {
