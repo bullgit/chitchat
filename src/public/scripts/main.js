@@ -2,7 +2,6 @@ var NONET = false;
 
   var myFirebaseRef = new Firebase("https://bullchat.firebaseio.com/messages");
 
-  var username_input = document.querySelector('.nameinput');
   var message_input =  document.querySelector('.messageinput');
   var send_btn = document.querySelector('.sendbutton');
   var message_container = document.querySelector('.chat-messages');
@@ -13,15 +12,11 @@ var NONET = false;
     }
   });
 
-  if (localStorage['username']) {
-    username_input.value = localStorage['username'];
-  }
-
 
     if (NONET==true) {
       document.getElementById('send').addEventListener('click', function(){
 
-      var username = document.getElementById('name').value;
+      var username = document.getElementById('name').textContent;
       var message = document.getElementById('message').textContent;
       // if (message.length == 0) return false;
 
@@ -46,7 +41,7 @@ var NONET = false;
     } else {
       document.getElementById('send').addEventListener('click', function(){
 
-        var username = document.getElementById('name').value;
+        var username = document.getElementById('name').textContent;
         var message = document.getElementById('message').textContent;
         if (message.length == 0) return false;
         myFirebaseRef.push({
@@ -97,8 +92,3 @@ var NONET = false;
     return true;
   }
 
-
-
-username_input.addEventListener('input', function () {
-  localStorage['username'] = username_input.value;
-});
