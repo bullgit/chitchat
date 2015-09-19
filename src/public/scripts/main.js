@@ -11,6 +11,9 @@ var message_input =  document.querySelector('.messageinput');
 var send_btn = document.querySelector('.sendbutton');
 var message_container = document.querySelector('.chat-messages');
 
+// Init highlight
+hljs.initHighlightingOnLoad();
+
 // Init marked
 marked.setOptions({
   highlight: function (code) {
@@ -64,7 +67,7 @@ myFirebaseRef.on('child_added', function(dataSnapshot) {
   '  <span class="-name"> '+ newPost.data.author +' </span>' +
   ' </div>' +
   ' <div class="-message">' +
-  ' <p>'+ marked(newPost.data.body) +'</p>' +
+      marked(newPost.data.body) +
   '</div>' +
   '</message>';
 

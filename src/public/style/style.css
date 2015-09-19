@@ -306,7 +306,6 @@ message .-message p {
 
 /* Style code blocks */
 pre {
-    font-family: "Courier 10 Pitch", Courier, monospace;
     font-size: 95%;
     line-height: 140%;
     white-space: pre;
@@ -316,7 +315,6 @@ pre {
 }       
 
 code {
-    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
     font-size: 95%;
     line-height: 140%;
     white-space: pre;
