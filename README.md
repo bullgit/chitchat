@@ -13,4 +13,4 @@ Building a bullgit chat from scratch
 
 # Other
 
-Don't forget to check out the [wiki](wiki)
+Don't forget to check out the [wiki](https://github.com/bullgit/chitchat/wiki)
