@@ -22,7 +22,7 @@ var NONET = false;
 
       var template = '<message data-time-stamp="10-11-2015">' +
       '<div class="user">' +
-          '  <span class="-avatar"> <img src="https://avatars.githubusercontent.com/u/' + username +  '" alt="avatar user" /> </span>' +
+          '  <span class="-avatar"> <img src="https://avatars.githubusercontent.com/' + username +  '" alt="avatar user" /> </span>' +
           '  <span class="-name"> '+ username +' </span>' +
          ' </div>' +
          ' <div class="user_message">' +
