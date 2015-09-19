@@ -107,8 +107,6 @@ aside ul li img {
   float: right;
   position: absolute;
   right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
   padding: 8px;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -116,6 +114,9 @@ aside ul li img {
   border: none;
   outline: none;
   min-width: 200px;
+  top: 0;
+  padding: 0;
+  margin: 0;
 }
 
 div#message {
@@ -162,13 +163,12 @@ button#send {
   z-index: 2;
   max-width: 50px;
   max-height: 50px;
-    padding: 0;
+  padding: 8px 16px;
 }
 
 .user_avatar img {
-  max-width: 100%;
-  padding: 10px;
-  border-radius: 20px;
+  max-width: 32px;
+  border-radius: 10px;
 }
 
 
@@ -202,29 +202,26 @@ button#send {
 /*====================================
  Messages style
 ====================================*/
+
+.message-row {
+  float: left;
+  width: 100%;
+}
+
 message {
   float: left;
-  width: calc(100% + 4em);
+  width: calc(100% + 2em);
   height: auto;
 
   border-top: 1px solid #eff0f2;
   border-bottom: 1px solid #eff0f2;
+  box-shadow: inset 120px 0 0 #FFF, calc(120 + 25px) 0 0 #7f57cf; /* 185px because 120 + 25px */
   line-height: 1;
   position: relative;
   margin-top: 8px;
-  left: -2em;
 }
 
-message:after {
-  display: block;
-  content: '';
-  position: absolute;
-  left: 10%;
-  height: 100%;
-  width: 4px;
-  background: #7f57cf;
 
-}
 
 message .user,
 message .user_message {
@@ -232,35 +229,41 @@ message .user_message {
 }
 
 message .user  {
-  color: #fff;
-  padding: 1em;
   position: relative;
-  width: 10%;
+  width: calc( 52px + 16px + 16px );
+  left: 0;
+  padding-right: 16px;
 }
 
 message .user .-avatar {
-  float: left;
-  max-width: 32px;
-  max-height: 32px;
-  overflow: hidden;
-  
+  width: 100%;
   border-radius: 10px;
+  position: relative;
+  float: left;
+  padding: 16px 0;
 }
 
 message .user .-avatar img  {
-  width: 100%;
+  width: 52px;
+  height: 52px;
   border-radius: 10px;
+  margin: 0 16px;
+  display: block;
+  
 }
 
 message .user .-name {
-  color: #568CCF;
+  display: none;
+  
 }
 
 message .user_message {
-  padding-left: 1em;
-  padding: 1em 2em;
-  width: 90%;
+  padding: 1em 1em;
+  width: calc(100% - 120px);
   background: white;
+  border-left: 1px solid #eff0f2;
+  float: left;
+  min-height: 84px;
 }
 
 /* Style text of messages */
