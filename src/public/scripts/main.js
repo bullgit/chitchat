@@ -26,8 +26,8 @@ var NONET = false;
             body: message
           }
         });
-      message_container.scrollTop = message_container.scrollHeight
-      
+      message_container.scrollTop = message_container.scrollHeight;
+      document.getElementById('message').innerHTML = "";
     });
     
     myFirebaseRef.on('child_added', function(dataSnapshot) {
@@ -43,7 +43,7 @@ var NONET = false;
           '  <span class="-avatar"> <img src="https://avatars.githubusercontent.com/' + newPost.data.author + '" alt="avatar user" /> </span>' +
           '  <span class="-name"> '+ newPost.data.author +' </span>' +
          ' </div>' +
-         ' <div class="user_message">' +
+         ' <div class="-message">' +
            ' <p>'+ marked(newPost.data.body) +'</p>' +
           '</div>' +
       '</message>';
@@ -55,7 +55,7 @@ var NONET = false;
       msg.innerHTML = template;
 
       document.querySelector('.chat-messages').appendChild(msg)
-      document.getElementById('message').innerHTML = "";
+      message_container.scrollTop = message_container.scrollHeight;
     });
 
     function searchKeyPress(e){

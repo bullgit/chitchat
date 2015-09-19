@@ -224,7 +224,7 @@ message {
 
 
 message .user,
-message .user_message {
+message .-message {
   float: left;
 }
 
@@ -257,7 +257,7 @@ message .user .-name {
   
 }
 
-message .user_message {
+message .-message {
   padding: 1em 1em;
   width: calc(100% - 120px);
   background: white;
@@ -267,7 +267,7 @@ message .user_message {
 }
 
 /* Style text of messages */
-message .user_message p {
+message .-message p {
   margin: 0;
   padding: 0;
   text-rendering: optimizeLegibility;
