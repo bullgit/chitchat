@@ -13,32 +13,7 @@ var NONET = false;
   });
 
 
-    if (NONET==true) {
-      document.getElementById('send').addEventListener('click', function(){
-
-      var username = document.getElementById('name').textContent;
-      var message = document.getElementById('message').textContent;
-      // if (message.length == 0) return false;
-
-      var template = '<message data-time-stamp="10-11-2015">' +
-      '<div class="user">' +
-          '  <span class="-avatar"> <img src="https://avatars.githubusercontent.com/' + username +  '" alt="avatar user" /> </span>' +
-          '  <span class="-name"> '+ username +' </span>' +
-         ' </div>' +
-         ' <div class="user_message">' +
-           ' <p>'+ message +'</p>' +
-          '</div>' +
-      '</message>';
-
-      var msg = document.createElement('div');
-      msg.innerHTML = template;
-
-      document.querySelector('.chat-messages').appendChild(msg)
-      document.getElementById('message').innerHTML = "";
-      message_container.scrollTop = message_container.scrollHeight
-
-    })
-    } else {
+    
       document.getElementById('send').addEventListener('click', function(){
 
         var username = document.getElementById('name').textContent;
@@ -51,10 +26,10 @@ var NONET = false;
             body: message
           }
         });
-
-      })
-    }
-
+      message_container.scrollTop = message_container.scrollHeight
+      
+    });
+    
     myFirebaseRef.on('child_added', function(dataSnapshot) {
       var newPost = dataSnapshot.val();
       var d = new Date();
@@ -75,6 +50,8 @@ var NONET = false;
 
 
       var msg = document.createElement('div');
+      msg.classList.add('message-row');
+      msg.id = newPost.id;
       msg.innerHTML = template;
 
       document.querySelector('.chat-messages').appendChild(msg)
