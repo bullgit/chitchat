@@ -1,4 +1,4 @@
-/* Fonts */ 
+/* Fonts */
 
 @font-face {
   font-family: radikal_regular;
@@ -12,7 +12,7 @@
   font-family: radikal_light;
   src: url("../fonts/radikal/radikal_light.eot?") format("eot"), url("../fonts/radikal/radikal_light.woff") format("woff"), url("../fonts/radikal/radikal_light.svg#radikal_light") format("svg"), url("../fonts/radikal/radikal_light.ttf") format("truetype"); }
 
-/* Reset */  
+/* Reset */
 *{
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -101,7 +101,7 @@ aside ul li img {
 }
 .user_infos .icon {
   float: left;
-  line-height: 0; 
+  line-height: 0;
   margin: 0 -1em;
 }
 .user_infos #name {
@@ -180,12 +180,12 @@ button#send {
   height: 100vh;
   padding-top: 75px;
   padding-bottom: 50px;
-  
+
   color: #000;
   width: calc(100% - 200px);
     float: left;
     overflow: hidden;
-    
+
   overflow-y: scroll;
 }
 
@@ -250,12 +250,12 @@ message .user .-avatar img  {
   border-radius: 10px;
   margin: 0 16px;
   display: block;
-  
+
 }
 
 message .user .-name {
   display: none;
-  
+
 }
 
 message .-message {
@@ -312,7 +312,7 @@ pre {
     white-space: pre-wrap;
     white-space: -moz-pre-wrap;
     white-space: -o-pre-wrap;
-}       
+}
 
 code {
     font-size: 95%;
@@ -335,7 +335,8 @@ code {
     -webkit-box-shadow: inset 0 0 0 .1em #eff0f2;
     box-shadow: inset 0 0 0 .1em #eff0f2;
     border-radius: 4.80000019073486px 4.80000019073486px 4.80000019073486px 4.80000019073486px;
-    font: normal normal 200 normal 16px/28px Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier, monospace;
+    font-family: Monaco, Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', 'Courier New', Courier, monospace;
+    font-weight: 200;
     overflow: auto;
     position: relative;
     background: #2d2d2d;
@@ -351,7 +352,7 @@ pre code {
   aside {
     transform: translate3d(100%, 0, 0);
   }
-  
+
   .chat-messages {
     width: 100%;
   }
