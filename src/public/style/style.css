@@ -307,7 +307,23 @@ message .-message p {
   border-radius: 10px;
 }
 
-
+/**/
+blockquote {
+  border-left: 2px solid #CCC;
+  margin: 0;
+  padding: 0.2em 0.45em;
+  font-weight: 400;
+}
+blockquote p {
+  font-size: 14px;
+  line-height: inherit;
+  color: inherit;
+  font-family: inherit;
+  color: red;
+  font-style: italic;
+  font-family: 'radikal_light', sans-serif;
+  font-weight: 300;
+}
 /* Style code blocks */
 pre {
   font-size: 95%;

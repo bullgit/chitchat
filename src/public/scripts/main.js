@@ -18,7 +18,9 @@ hljs.initHighlightingOnLoad();
 marked.setOptions({
   highlight: function (code) {
     return hljs.highlightAuto(code).value;
-  }
+  },
+   sanitize: true,
+  smartLists: true
 });
 
 // ====================================
@@ -95,9 +97,14 @@ myFirebaseRef.on('child_added', function(dataSnapshot) {
 function searchKeyPress(e){
     // look for window.event in case event isn't passed in
     e = e || window.event;
-    if (e.keyCode == 13)
-    {
+    if (e.keyCode == 13 && !e.shiftKey) {
+        e.preventDefault();
       document.getElementById('send').click();
+      return false
+    } 
+    if (e.keyCode == 13 && e.shiftKey) {
+      e.preventDefault();
+      message_input.innerHTML =+ '<br/>';
       return false;
     }
     return true;
