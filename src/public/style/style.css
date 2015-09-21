@@ -325,7 +325,6 @@ code {
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
-  * { text-rendering: optimizeLegibility; }
   border-radius: 5px;
   font-family: Monaco, Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', 'Courier New', Courier, monospace;
   font-weight: 200;
