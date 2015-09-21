@@ -197,17 +197,6 @@ button#send {
   overflow-y: scroll;
 }
 
-.chat-messages .messages_wrapper {
-  float: left;
-  position: relative;
-  height: 100%;
-  width: 100%;
-  overflow: scroll;
-  padding: 1em 2em;
-}
-
-
-
 /*====================================
  Messages style
  ====================================*/
