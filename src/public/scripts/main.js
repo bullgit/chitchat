@@ -108,12 +108,14 @@ function searchKeyPress(e){
       document.getElementById('send').click();
       return false
     } 
+
     else if (e.keyCode == 13 && e.shiftKey) {
       var br = document.createElement('span');
       br.classList.add('break-line');
       br.textContent = '&#10;&#13;';
       br.style.textIndent = "-9999px";
       message_input.appendChild(br)
+
       return false;
     }
     return true;
