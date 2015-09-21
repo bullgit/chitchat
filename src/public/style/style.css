@@ -20,6 +20,7 @@
 *{
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 html, body {
@@ -275,7 +276,7 @@ message .-message {
 message .-message p {
   margin: 0;
   padding: 0;
-  text-rendering: optimizeLegibility;
+  * { text-rendering: optimizeLegibility; }
   white-space: pre-wrap;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -302,6 +303,7 @@ message .-message p {
 .icon.icon-github {
   background: url(../img/github.svg)no-repeat center center / contain;
 }
+
 /* Some utils */
 .avatar {
   border-radius: 10px;
@@ -331,7 +333,7 @@ code {
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
-  text-rendering: optimizeLegibility;
+  * { text-rendering: optimizeLegibility; }
   border-radius: 5px;
   font-family: Monaco, Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', 'Courier New', Courier, monospace;
   font-weight: 200;
