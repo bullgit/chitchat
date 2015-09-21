@@ -17,20 +17,23 @@
 }
 
 /* Reset */
-*{
-  box-sizing: border-box;
+* {
+  box-sizing: inherit;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-html, body {
-  float: left;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+html {
+  box-sizing: border-box;
   color: #fff;
   font-family: 'Radikal_regular', Arial;
   font-weight: 300;
+}
+
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -276,7 +279,7 @@ message .-message {
 message .-message p {
   margin: 0;
   padding: 0;
-  * { text-rendering: optimizeLegibility; }
+
   white-space: pre-wrap;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
