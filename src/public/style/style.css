@@ -25,6 +25,7 @@
 }
 
  html, body {
+  box-sizing: border-box;
   float: left;
   width: 100%;
   margin: 0;
@@ -375,7 +376,7 @@ pre code {
 /* utils */
 .center {
   text-align: center;
-  
+
 }
 
 /* buttons */
@@ -394,5 +395,5 @@ pre code {
   color: #fff;
   transform: translate(-50%, -50%);
   text-decoration: none;
-  
+
 }
