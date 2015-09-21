@@ -21,6 +21,7 @@
   box-sizing: inherit;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
