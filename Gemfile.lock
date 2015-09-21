@@ -75,6 +75,3 @@ DEPENDENCIES
   omniauth-github
   rack
   thin
-
-BUNDLED WITH
-   1.10.6
