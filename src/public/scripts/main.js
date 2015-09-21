@@ -19,8 +19,14 @@ marked.setOptions({
   highlight: function (code) {
     return hljs.highlightAuto(code).value;
   },
-   sanitize: true,
-  smartLists: true
+  renderer: new marked.Renderer(),
+  gfm: true,
+  tables: true,
+  breaks: true,
+  pedantic: false,
+  sanitize: true,
+  smartLists: true,
+  smartypants: false
 });
 
 // ====================================
@@ -102,9 +108,12 @@ function searchKeyPress(e){
       document.getElementById('send').click();
       return false
     } 
-    if (e.keyCode == 13 && e.shiftKey) {
-      e.preventDefault();
-      message_input.innerHTML =+ '<br/>';
+    else if (e.keyCode == 13 && e.shiftKey) {
+      var br = document.createElement('span');
+      br.classList.add('break-line');
+      br.textContent = '&#10;&#13;';
+      br.style.textIndent = "-9999px";
+      message_input.appendChild(br)
       return false;
     }
     return true;

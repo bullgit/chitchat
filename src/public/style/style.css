@@ -385,3 +385,30 @@ pre code {
     width: calc(100% - 100px);
   }
 }
+
+
+
+/* utils */
+.center {
+  text-align: center;
+  
+}
+
+/* buttons */
+
+.button {
+  text-align: center;
+  display: block;
+  width: 300px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #2094D3;
+  color: #fff;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+  
+}
