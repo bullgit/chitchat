@@ -7,6 +7,9 @@ Building a bullgit chat from scratch
 - install ruby 2.1.2 or newer
 - `bundle install`
 - `npm install`
+
+# Build the project
+
 - `gulp build`
 
 # Starting the server
