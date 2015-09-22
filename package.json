@@ -1,0 +1,39 @@
+{
+  "name": "chitchat",
+  "version": "1.0.0",
+  "description": "The chat created from scratch by bullgit",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^0.0.7",
+    "gulp-ruby-sass": "^0.7.1",
+    "gulp-livereload": "^3.8.0",
+    "gulp-concat": "^2.6.0",
+    "connect": "^2.14.4",
+    "connect-livereload": "^0.4.0",
+    "gulp-load-plugins": "^0.5.0",
+    "gulp-uglify": "^0.2.1",
+    "opn": "^0.1.1",
+    "gulp-plumber": "1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "ø"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bullgit/chitchat.git"
+  },
+  "keywords": [
+    "chat",
+    "firebase",
+    "chaplin",
+    "bullgit"
+  ],
+  "author": "bullgit <lucas.bonomi@bullg.it>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bullgit/chitchat/issues"
+  },
+  "homepage": "https://github.com/bullgit/chitchat"
+}

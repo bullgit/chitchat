@@ -12,6 +12,11 @@ Building a bullgit chat from scratch
 
 - `gulp build`
 
+# development
+
+- npm install for gulp
+- `gulp watch` during development.
+
 # Starting the server
 
 `GITHUB_KEY=<the_github_key> GITHUB_SECRET=<the_github_secret> bundle exec rackup`
