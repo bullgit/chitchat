@@ -3,17 +3,31 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var plumber = require('gulp-plumber');
 
-var css_files = 'src/public/sass/**/*.scss',
-    js_files = 'src/public/scripts/**/*',
-    fonts_files = 'src/public/fonts/**/*',
-    image_files = 'src/public/img/**/*',
-    template_files = 'src/templates/**/*',
-    chaplin_files = ['src/chaplin_config.json', 'src/app.yml'];
+var config = {
+
+  src: {
+    css: 'src/public/sass/**/*.scss',
+    js: 'src/public/scripts/**/*',
+    fonts: 'src/public/fonts/**/*',
+    image: 'src/public/img/**/*',
+    template: 'src/templates/**/*',
+    chaplin: ['src/chaplin_config.json', 'src/app.yml']
+  },
+
+  dist: {
+    css: 'dist/public/css',
+    js: 'dist/public/js/',
+    fonts: 'dist/public/fonts/',
+    image: 'dist/public/img',
+    template: 'dist/templates/',
+    chaplin: 'dist/'
+  }
+}
 
 gulp.task('default', ['build'],  function(){});
 
 gulp.task('css', function () {
-  return gulp.src(css_files)
+  return gulp.src(config.src.css)
   .pipe(plumber())
   .pipe($.rubySass({
       style: 'expanded',
@@ -21,38 +35,38 @@ gulp.task('css', function () {
   }))
   .pipe($.autoprefixer('last 2 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
   .pipe($.concat('main.css'))
-  .pipe(gulp.dest('dist/public/css'))
+  .pipe(gulp.dest(config.dist.css))
   livereload.listen();
 });
 
 gulp.task('js', function () {
-  return gulp.src(js_files)
+  return gulp.src(config.src.js)
   .pipe(plumber())
-  .pipe(gulp.dest('dist/public/js'))
+  .pipe(gulp.dest(config.dist.js))
   $.livereload.listen();
 })
 
 gulp.task('fonts', function () {
-  return gulp.src(fonts_files)
+  return gulp.src(config.src.fonts)
   .pipe(gulp.dest('dist/public/fonts'))
   $.livereload.listen();
 })
 
 gulp.task('images', function () {
-  return gulp.src(image_files)
-  .pipe(gulp.dest('dist/public/img'))
+  return gulp.src(config.src.image)
+  .pipe(gulp.dest(config.dist.image))
   $.livereload.listen();
 })
 
 gulp.task('templates', function () {
-  return gulp.src(template_files)
-  .pipe(gulp.dest('dist/templates'))
+  return gulp.src(config.src.template)
+  .pipe(gulp.dest(config.dist.template))
   $.livereload.listen();
 });
 
 gulp.task('chaplin', function () {
-  return gulp.src(chaplin_files)
-  .pipe(gulp.dest('dist'))
+  return gulp.src(config.src.chaplin)
+  .pipe(gulp.dest(config.dist.chaplin))
   $.livereload.listen();
 });
 
@@ -77,24 +91,24 @@ gulp.task('serve', ['connect', 'css'], function () {
 
 gulp.task('watch', ['connect', 'serve'], function () {
   $.livereload.listen();
- 
+
   gulp.watch([
     'src/*.html',
-    'src/public/sass/**/*.scss',
-    'src/public/js/**/*.js',
-    'src/public/img/**/*'
+    config.src.css,
+    config.src.js,
+    config.src.image
   ]).on('change', function (file) {
     return $.livereload.changed(file.path);
   });
 
-  gulp.watch('src/public/sass/**/*.scss', ['css']);
-  gulp.watch(js_files, ['js']);
-  gulp.watch(image_files, ['images']);
-  gulp.watch(template_files, ['templates']);
-  gulp.watch(chaplin_files, ['chaplin']);
+  gulp.watch(config.src.css, ['css']);
+  gulp.watch(config.src.js, ['js']);
+  gulp.watch(config.src.image, ['images']);
+  gulp.watch(config.src.template, ['templates']);
+  gulp.watch(config.src.chaplin, ['chaplin']);
 });
 
 
 gulp.task('build', function () {
-  return gulp.start('chaplin', 'templates', 'js', 'css', 'images');
+  return gulp.start('chaplin', 'templates', 'js', 'css', 'images', 'fonts');
 })
