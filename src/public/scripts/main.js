@@ -5,7 +5,7 @@
 // Main.js
 // ====================================
 
-var myFirebaseRef = new Firebase("https://bullchat.firebaseio.com/messages");
+var myFirebaseRef = new Firebase( BASE + '/messages');
 
 var message_input =  document.querySelector('.messageinput');
 var send_btn = document.querySelector('.sendbutton');
