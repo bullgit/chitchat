@@ -36,7 +36,7 @@ gulp.task('css', function () {
   .pipe($.autoprefixer('last 2 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
   .pipe($.concat('main.css'))
   .pipe(gulp.dest(config.dist.css))
-  livereload.listen();
+  .pipe($.livereload())
 });
 
 gulp.task('js', function () {
@@ -73,7 +73,7 @@ gulp.task('chaplin', function () {
 gulp.task('connect', function () {
     var connect = require('connect');
     var app = connect()
-    .use(require('connect-livereload')({ port: 3001 }))
+    .use(require('connect-livereload')({ port: 9292 }))
     .use(connect.static('app'))
     .use(connect.static('.tmp'))
     .use(connect.directory('app'));
@@ -99,6 +99,7 @@ gulp.task('watch', ['connect', 'serve'], function () {
     config.src.image
   ]).on('change', function (file) {
     return $.livereload.changed(file.path);
+    console.log('changed')
   });
 
   gulp.watch(config.src.css, ['css']);
