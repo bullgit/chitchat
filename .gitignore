@@ -3,3 +3,5 @@
 bower_components
 node_modules/
 
+src/public/scripts/config.js
+dist/public/js/config.js
