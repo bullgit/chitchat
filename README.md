@@ -25,4 +25,6 @@ Building a bullgit chat from scratch
 
 Don't forget to check out the [wiki](https://github.com/bullgit/chitchat/wiki)
 
+---
+
 [ ![Codeship Status for bullgit/chitchat](https://codeship.com/projects/6ab28d80-42ab-0133-3d8f-1eb5f82d52fc/status?branch=master)](https://codeship.com/projects/103812)
