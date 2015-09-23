@@ -4,7 +4,7 @@
 // ====================================
 // Main.js
 // ====================================
-
+var BASE = 'http://bullchat.firebaseio.com';
 var myFirebaseRef = new Firebase( BASE + '/messages');
 
 var message_input =  document.querySelector('.messageinput');
@@ -35,7 +35,7 @@ marked.setOptions({
 
 // Detect when message is sent
 document.getElementById('send').addEventListener('click', function(){
-  
+
   // Get the desired values for name / message
   var username = document.getElementById('name').textContent;
   var message = document.getElementById('message').textContent;
@@ -83,7 +83,7 @@ myFirebaseRef.on('child_added', function(dataSnapshot) {
   // And give it some attributes
   var msg = document.createElement('div');
   msg.classList.add('message-row');
-  msg.id = newPost.id; 
+  msg.id = newPost.id;
 
   // Fill it with the template
   msg.innerHTML = template;
@@ -107,7 +107,7 @@ function searchKeyPress(e){
         e.preventDefault();
       document.getElementById('send').click();
       return false
-    } 
+    }
 
     else if (e.keyCode == 13 && e.shiftKey) {
       var br = document.createElement('span');
