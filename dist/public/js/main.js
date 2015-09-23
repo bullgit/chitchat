@@ -7,7 +7,20 @@
 var BASE = 'http://bullchat.firebaseio.com';
 var myFirebaseRef = new Firebase( BASE + '/messages');
 
-var message_input =  document.querySelector('.messageinput');
+myFirebaseRef.authWithOAuthPopup("github", function(error, authData) {
+  if (error) {
+    console.log("Login Failed!", error);
+    // If error
+    window.location = '/error.html'
+  } else {
+    console.log("Authenticated successfully with payload:", authData);
+    // If logged
+    app()
+  }
+});
+
+function app(){
+  var message_input =  document.querySelector('.messageinput');
 var send_btn = document.querySelector('.sendbutton');
 var message_container = document.querySelector('.chat-messages');
 
@@ -120,3 +133,5 @@ function searchKeyPress(e){
     }
     return true;
   }
+
+}
