@@ -1,0 +1,61 @@
+
+/*====================================
+ Layout
+ ====================================*/
+ header, footer {
+  width: 100%;
+  width: 100vw;
+
+  padding: 0 16px;
+  float: left;
+  min-height: 50px;
+  background: linear-gradient(to left, #2296D4 , #8283C9 );
+  position: fixed;
+  z-index: 99999999999999999999;
+  line-height: 50px;
+  color: #fff;
+}
+
+header {
+  top: 0;
+  height: 75px;
+  line-height: 75px;
+}
+
+footer {
+  bottom: 0;
+}
+
+aside {
+  position: fixed;
+  top: 75px;
+  right: 0;
+  height: calc(100% - 125px);
+  z-index: 2;
+  max-width: 200px;
+  background: #fff;
+  border-left: 1px solid #eff0f2;
+  transition: transform .25s ease;
+
+  @media all and (max-width: $bp-s) {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+aside ul {
+  padding: 1em 8px;
+  margin: 0;
+  list-style: none;
+}
+
+aside ul li {
+  display: inline-block;
+  float: left;
+  max-width: 20%;
+  padding: 0 4px;
+  display: block;
+}
+
+aside ul li img {
+  max-width: 100%;
+}

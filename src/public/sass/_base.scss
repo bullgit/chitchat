@@ -1,0 +1,94 @@
+/* Fonts */
+
+@font-face {
+  font-family: radikal_regular;
+  src: url("../fonts/radikal/radikal_regular.eot?") format("eot"), url("../fonts/radikal/radikal_regular.woff") format("woff"), url("../fonts/radikal/radikal_regular.svg#radikal_regular") format("svg"), url("../fonts/radikal/radikal_regular.ttf") format("truetype");
+}
+
+
+@font-face {
+  font-family: radikal_bold;
+  src: url("../fonts/radikal/radikal_bold.eot?") format("eot"), url("../fonts/radikal/radikal_bold.woff") format("woff"), url("../fonts/radikal/radikal_bold.svg#radikal_bold") format("svg"), url("../fonts/radikal/radikal_bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: radikal_light;
+  src: url("../fonts/radikal/radikal_light.eot?") format("eot"), url("../fonts/radikal/radikal_light.woff") format("woff"), url("../fonts/radikal/radikal_light.svg#radikal_light") format("svg"), url("../fonts/radikal/radikal_light.ttf") format("truetype");
+}
+
+/* Reset */
+* {
+  box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ html, body {
+  box-sizing: border-box;
+  float: left;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: 'Radikal_regular', Arial;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+
+/**/
+blockquote {
+  border-left: 2px solid #CCC;
+  margin: 0;
+  padding: 0.2em 0.45em;
+  font-weight: 400;
+}
+blockquote p {
+  font-size: 14px;
+  line-height: inherit;
+  color: inherit;
+  font-family: inherit;
+  color: red;
+  font-style: italic;
+  font-family: 'radikal_light', sans-serif;
+  font-weight: 300;
+}
+/* Style code blocks */
+pre {
+  font-size: 95%;
+  line-height: 140%;
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -o-pre-wrap;
+}
+
+code {
+  font-size: 95%;
+  line-height: 140%;
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -o-pre-wrap;
+  display: inline;
+  padding: 0.25em 0.5em;
+  letter-spacing: -1px;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  border-radius: 5px;
+  font-family: Monaco, Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', 'Courier New', Courier, monospace;
+  font-weight: 200;
+  overflow: auto;
+  background: #2d2d2d;
+  color: #fff;
+}
+
+pre code {
+  display: inline-block;
+}
